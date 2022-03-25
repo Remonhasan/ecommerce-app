@@ -40,6 +40,12 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        // added Admin Guard
+        'web' => [
+            'admin' => 'session',
+            'provider' => 'admins', // Database Table Name 
+        ],
     ],
 
     /*
@@ -63,6 +69,12 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
+        ],
+
+        // Admin Provider for Guard
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Admin::class, // added Model
         ],
 
         // 'users' => [
