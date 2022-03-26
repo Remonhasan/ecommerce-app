@@ -42,7 +42,7 @@ return [
         ],
 
         // added Admin Guard
-        'web' => [
+        'admin' => [
             'admin' => 'session',
             'provider' => 'admins', // Database Table Name 
         ],
@@ -77,10 +77,6 @@ return [
             'model' => App\Models\Admin::class, // added Model
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
     ],
 
     /*
@@ -105,6 +101,7 @@ return [
             'expire' => 60,
             'throttle' => 60,
         ],
+        
     ],
 
     /*
