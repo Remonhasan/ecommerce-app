@@ -43,7 +43,7 @@ return [
 
         // added Admin Guard
         'admin' => [
-            'admin' => 'session',
+            'driver' => 'session',
             'provider' => 'admins', // Database Table Name 
         ],
     ],
