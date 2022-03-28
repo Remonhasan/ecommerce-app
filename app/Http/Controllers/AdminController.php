@@ -32,7 +32,6 @@ class AdminController extends Controller
         }else{
             return redirect()->back()->with('error','Invalid Email or Password');
         }
-        return view();
     }
     
     /**
