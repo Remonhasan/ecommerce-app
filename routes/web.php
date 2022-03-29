@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\admin\category\CategoryController;
 
 /*-------------------Admin Route Start----------------*/
 
@@ -15,6 +16,11 @@ Route::prefix('admin')->group(function () {
     Route::get('/login', [AdminController::class, 'loginForm'])->name('login.form');
     Route::post('/login/owner', [AdminController::class, 'login'])->name('admin.login');
     Route::get('/logout', [AdminController::class, 'logout'])->name('admin.logout')->middleware('admin');
+
+    // Category Routes
+    Route::get('/category', [CategoryController::class, 'index'])->name('admin.category')->middleware('admin');
+    Route::get('/category/create', [CategoryController::class, 'create'])->name('admin.create')->middleware('admin');
+    Route::post('/category/store', [CategoryController::class, 'store'])->name('admin.category.store')->middleware('admin');
 });
 /*-------------------Admin Route End------------------*/
 
