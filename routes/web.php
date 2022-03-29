@@ -3,22 +3,12 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 /*-------------------Admin Route Start----------------*/
 
 Route::prefix('admin')->group(function () {
     // Register
-    Route::get('/register', [AdminController::class, 'registerForm'])->name('admin.register');
+    Route::get('/register', [AdminController::class, 'registerForm'])->name('register.form');
+    Route::post('/register/create', [AdminController::class, 'register'])->name('admin.register');
     // Dashboard
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard')->middleware('admin');
     // Login
