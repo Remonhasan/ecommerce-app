@@ -24,7 +24,7 @@ class CategoryController extends Controller
         $inputs = $request->all();
         Category::create($inputs);
 
-        Toastr::success('Category Saved Successfully', 'Title', ["positionClass" => "toast-top-center"]);
+        Toastr::success('Category Saved Successfully', 'Ecommerce', ["positionClass" => "toast-top-center"]);
         return redirect()->back();
     }
 }

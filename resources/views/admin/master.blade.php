@@ -25,6 +25,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    
+    <link rel="stylesheet" href=" {{ asset('admin/assets/css/validation-style.css') }}" />
     <!-- Icons -->
    
     <link rel="stylesheet" href=" {{ asset('admin/assets/vendor/fonts/boxicons.css') }}" />
@@ -172,14 +176,15 @@
     <!-- / Layout wrapper -->
 
 
-    <div class="buy-now">
+    {{-- <div class="buy-now">
         <a href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/" target="_blank"
             class="btn btn-danger btn-buy-now">Buy Now</a>
-    </div>
+    </div> --}}
 
 
 
-
+    <script src="{{ asset('admin/assets/js/tables-datatables-basic.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/fontawesome.min.js" integrity="sha512-5qbIAL4qJ/FSsWfIq5Pd0qbqoZpk5NcUVeAAREV2Li4EKzyJDEGlADHhHOSSCw0tHP7z3Q4hNHJXa81P92borQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
     <script src="{{ asset('admin/assets/vendor/libs/jquery/jquery.js') }}"></script>
@@ -193,9 +198,7 @@
 
     <script src="{{ asset('admin/assets/vendor/js/menu.js') }}"></script>
     <!-- endbuild -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
     </script>
@@ -210,12 +213,15 @@
 
     <!-- Page JS -->
     {{-- <script src="{{ asset('admin/assets/js/dashboards-analytics.js') }}"></script> --}}
-    <script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+    {{-- <script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script> --}}
+   
+    <script src="{{ asset('admin/assets/js/tables-datatables-basic.js') }}"></script>
+    
+   
     <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
     {!! Toastr::message() !!}
 </body>
 
 
-<!-- Mirrored from demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 26 Mar 2022 10:59:48 GMT -->
 
 </html>

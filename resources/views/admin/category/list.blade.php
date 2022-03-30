@@ -29,7 +29,7 @@
     <h4 class="fw-bold py-3 mb-4">
         <span class="text-active">Categories</span>
         <span>
-            <a href="{{ route('admin.create') }}" class="btn btn-primary text-active float-right">
+            <a href="{{ route('admin.create') }}" class="btn btn-info text-active float-right">
                 <i class="bx bx-plus"></i>
                 Add</a>
         </span>
@@ -40,9 +40,10 @@
         <div class="card-datatable table-responsive">
             <table class="datatables-basic table border-top">
                 <thead>
-                    <tr class="bg-secondary">
+                    <tr class="bg-secondary text-white"">
                         <th>id</th>
-                        <th>Name</th>
+                        <th>Name (In English)</th>
+                        <th>Name (In Bangla)</th>
                         <th>Is Active</th>
                         <th>Date</th>
                         <th>Action</th>
@@ -52,7 +53,8 @@
                     @foreach ($allCategories as $key => $category)
                         <tr>
                             <td>{{ $key + 1 }}</td>
-                            <td>{{ $category->name }}</td>
+                            <td>{{ $category->name_en }}</td>
+                            <td>{{ $category->name_bn }}</td>
                             <td>{{ $category->is_active }}</td>
                             <td>{{ $category->created_at }}</td>
                             <td>Action</td>
@@ -60,9 +62,10 @@
                     @endforeach
                 </tbody>
                 <tfoot>
-                    <tr class="bg-secondary text-white">
+                    <tr class="bg-secondary text-white"">
                         <th>id</th>
-                        <th>Name</th>
+                        <th>Name (In English)</th>
+                        <th>Name (In Bangla)</th>
                         <th>Is Active</th>
                         <th>Date</th>
                         <th>Action</th>
@@ -103,5 +106,5 @@
     <!-- Main JS -->
     <script src="{{ asset('admin//js/main.js') }}"></script>
     <!-- Page JS -->
-    <script src="{{ asset('admin/assets/js/tables-datatables-basic.js') }}"></script>
+   
 @endpush

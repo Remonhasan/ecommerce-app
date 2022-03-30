@@ -10,7 +10,8 @@ class Category extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name',
+        'name_en',
+        'name_bn',
         'is_active',
     ];
 }

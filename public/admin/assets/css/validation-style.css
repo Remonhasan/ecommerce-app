@@ -1,0 +1,11 @@
+.error-msg{
+    color:red;
+  }
+
+input.input-invalid{
+    border: 1px solid red;
+}
+
+.msg-hidden{
+    display: none;
+}
