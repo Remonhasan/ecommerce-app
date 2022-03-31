@@ -87,7 +87,7 @@
                             </div>
                         @endif
 
-                        <form action="{{ route('admin.register') }}" id="formAuthentication" class="mb-3"
+                        <form action="{{ route('admin.register', app()->getLocale()) }}" id="formAuthentication" class="mb-3"
                             method="post">
                             @csrf
 
@@ -119,7 +119,7 @@
 
                         <p class="text-center">
                             <span>Already have an account?</span>
-                            <a href="{{ route('login.form') }}">
+                            <a href="{{ route('login.form', app()->getLocale()) }}">
                                 <span>Login</span>
                             </a>
                         </p>
