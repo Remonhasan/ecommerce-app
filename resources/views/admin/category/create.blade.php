@@ -1,7 +1,21 @@
 @extends('admin.master')
 @section('title', 'Category')
-@push('styles')
-@endpush
+@section('styles')
+    <style>
+        .error-msg {
+            color: red;
+        }
+
+        input.msg-box {
+            border: 1px solid red;
+        }
+
+        .msg-hidden {
+            display: none;
+        }
+
+    </style>
+@endsection
 @section('admin')
 
     <h4 class="fw-bold py-3 mb-4">
@@ -29,13 +43,13 @@
                                 </div>
                                 <div class="col">
                                     <label for="name-bn">Name (In Bangla)</label>
-                                    <input type="text" name="name_bn" class="form-control mb-1"
-                                        placeholder="Name in Bangla" autocomplete="off">
+                                    <input type="text" name="name_bn" class="form-control mb-1" placeholder="Name in Bangla"
+                                        autocomplete="off">
                                     <div class="error-msg msg-hidden ml-1">Name is required.</div>
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" id="hello" class="btn btn-primary float-right">Save</button>
+                        <button type="submit" id="formSubmit" class="btn btn-primary float-right">Save</button>
                     </form>
                 </div>
             </div>
@@ -44,12 +58,56 @@
     </div>
 
 @endsection
-@push('scripts')
-<script src="{{ asset('admin/assets/vendor/libs/formvalidation/dist/js/FormValidation.min.js') }}"></script>
-<script>
-  $(document).ready(function(){
-      const    
-  });
-  </script>
 
-@endpush
+@section('scripts')
+    <script type="text/javascript">
+        $(document).ready(function() {
+            const form = document.querySelector('form');
+            // Get Input 
+            const nameInputEn = document.querySelector('input[name="name_en"]')
+            const nameInputBn = document.querySelector('input[name="name_bn"]')
+            // Checked Validation Status
+            let isFormValid = false;
+            // Check Vakidation
+            const validateInputs = () => {
+                // Remove Invalid
+                nameInputEn.classList.remove("invalid");
+                nameInputBn.classList.remove("invalid");
+                // Remove Error Message
+                nameInputEn.nextElementSibling.classList.add("msg-hidden");
+                nameInputBn.nextElementSibling.classList.add("msg-hidden");
+                // Check when input is null
+                if (!nameInputEn.value) {
+                    nameInputEn.classList.add("invalid");
+                    nameInputEn.nextElementSibling.classList.remove("msg-hidden");
+                    isFormValid = false;
+                } else {
+                    isFormValid = true;
+                }
+                if (!nameInputBn.value) {
+                    nameInputBn.classList.add("invalid");
+                    nameInputBn.nextElementSibling.classList.remove("msg-hidden");
+                    isFormValid = false;
+                } else {
+                    isFormValid = true;
+                }
+            }
+            // Check Submit Event
+            form.addEventListener("submit", (e) => {
+                e.preventDefault();
+                validateInputs();
+                console.log(isFormValid);
+                if (isFormValid) {
+                    form.submit();
+                }
+            });
+            // Add Invalid Color and Necessaries
+            nameInputEn.addEventListener("input", () => {
+                validateInputs();
+            });
+            nameInputBn.addEventListener("input", () => {
+                validateInputs();
+            });
+        });
+    </script>
+@endsection

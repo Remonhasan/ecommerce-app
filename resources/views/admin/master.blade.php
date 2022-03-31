@@ -48,9 +48,7 @@
 
     <!-- Page CSS -->
     
-    <!-- Helpers -->
-    <script src="{{ asset('admin/assets/vendor/js/helpers.js') }}"></script>
-
+    @yield('styles')
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
@@ -206,7 +204,7 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
     <!-- Vendors JS -->
-    <script src="{{ asset('admin/assets/vendor/libs/apex-charts/apexcharts.js') }}"></script>
+    {{-- <script src="{{ asset('admin/assets/vendor/libs/apex-charts/apexcharts.js') }}"></script> --}}
 
     <!-- Main JS -->
     {{-- <script src="{{ asset('admin/assets/js/main.js') }}"></script> --}}
@@ -214,12 +212,14 @@
     <!-- Page JS -->
     {{-- <script src="{{ asset('admin/assets/js/dashboards-analytics.js') }}"></script> --}}
     {{-- <script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script> --}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
    
     <script src="{{ asset('admin/assets/js/tables-datatables-basic.js') }}"></script>
-    
-   
     <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
     {!! Toastr::message() !!}
+
+    @yield('scripts')
+
 </body>
 
 

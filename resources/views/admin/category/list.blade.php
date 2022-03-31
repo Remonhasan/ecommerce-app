@@ -104,7 +104,7 @@
     <script src="{{ asset('admin/assets/vendor/libs/formvalidation/dist/js/plugins/AutoFocus.min.js') }}"></script>
 
     <!-- Main JS -->
-    <script src="{{ asset('admin//js/main.js') }}"></script>
+    <script src="{{ asset('admin/assets/js/main.js') }}"></script>
     <!-- Page JS -->
    
 @endpush
