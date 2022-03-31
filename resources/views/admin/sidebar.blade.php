@@ -22,7 +22,7 @@
 
     <!-- Category -->
     <li class="menu-item">
-        <a href="list.html" class="menu-link">
+        <a href="{{ route('admin.category') }}" class="menu-link">
             <i class="menu-icon tf-icons bx bx-window-open"></i>
             <div data-i18n="Category">Category</div>
         </a>

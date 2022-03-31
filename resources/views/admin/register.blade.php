@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Login</title>
+    <title>Admin Register</title>
     
     <meta name="description" content="Most Powerful &amp; Comprehensive Bootstrap 5 HTML Admin Dashboard Template built for developers!" />
     <meta name="keywords" content="dashboard, bootstrap 5 dashboard, bootstrap 5 design, bootstrap 5">
@@ -76,7 +76,7 @@
                     <div class="card-body">
                         <!-- Logo -->
                         <!-- /Logo -->
-                        <h4 class="pb-2 text-center mb-2">Admin Login👋</h4>
+                        <h4 class="pb-2 text-center mb-2">Admin Register👋</h4>
 
                         @if (Session::has('error'))
                             <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -87,9 +87,15 @@
                             </div>
                         @endif
 
-                        <form action="{{ route('admin.login') }}" id="formAuthentication" class="mb-3"
+                        <form action="{{ route('admin.register') }}" id="formAuthentication" class="mb-3"
                             method="post">
                             @csrf
+
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Username</label>
+                                <input type="text" class="form-control" name="name" placeholder="Enter your username"
+                                    autofocus>
+                            </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
                                 <input type="email" class="form-control" name="email" placeholder="Enter your email"
@@ -98,9 +104,6 @@
                             <div class="mb-3 form-password-toggle">
                                 <div class="d-flex justify-content-between">
                                     <label class="form-label" for="password">Password</label>
-                                    <a href="auth-forgot-password-basic.html">
-                                        <small>Forgot Password?</small>
-                                    </a>
                                 </div>
                                 <div class="input-group input-group-merge">
                                     <input type="password" class="form-control" name="password"
@@ -110,22 +113,14 @@
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="remember-me">
-                                    <label class="form-check-label" for="remember-me">
-                                        Remember Me
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <button class="btn btn-primary d-grid w-100" type="submit">Login</button>
+                                <button class="btn btn-primary d-grid w-100" type="submit">Register</button>
                             </div>
                         </form>
 
                         <p class="text-center">
-                            <span>New on our platform?</span>
-                            <a href="{{ route('register.form') }}">
-                                <span>Create an account</span>
+                            <span>Already have an account?</span>
+                            <a href="{{ route('login.form') }}">
+                                <span>Login</span>
                             </a>
                         </p>
 
