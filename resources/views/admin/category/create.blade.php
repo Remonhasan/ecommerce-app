@@ -39,13 +39,13 @@
                                     <label for="name-en">Name (In English)</label>
                                     <input type="text" name="name_en" class="form-control mb-1"
                                         placeholder="Name in English" autocomplete="off">
-                                    <div class="error-msg msg-hidden">Name is required.</div>
+                                    <div class="error-msg msg-hidden">Name (In English) is required.</div>
                                 </div>
                                 <div class="col">
                                     <label for="name-bn">Name (In Bangla)</label>
                                     <input type="text" name="name_bn" class="form-control mb-1" placeholder="Name in Bangla"
                                         autocomplete="off">
-                                    <div class="error-msg msg-hidden ml-1">Name is required.</div>
+                                    <div class="error-msg msg-hidden ml-1">Name (In Bangla) is required.</div>
                                 </div>
                             </div>
                         </div>
@@ -68,7 +68,7 @@
             const nameInputBn = document.querySelector('input[name="name_bn"]')
             // Checked Validation Status
             let isFormValid = false;
-            // Check Vakidation
+            // Check Validation
             const validateInputs = () => {
                 // Remove Invalid
                 nameInputEn.classList.remove("invalid");
