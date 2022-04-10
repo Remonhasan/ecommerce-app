@@ -234,4 +234,21 @@ return [
 
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Base items per page limits.
+    |--------------------------------------------------------------------------
+    |
+    | Defined items per page by system. This limitation will
+    | restrict users inputing self-defined number in the
+    | URL for performance issues.
+    |
+    */
+    'items_per_pages' => [
+        10,
+        20,
+        50,
+        100,
+    ],
+
 ];

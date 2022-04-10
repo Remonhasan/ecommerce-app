@@ -21,7 +21,7 @@
     <h4 class="fw-bold py-3 mb-4">
         <span class="text-active fw-light">Create New Category</span>
         <span>
-            <a href="{{ route('admin.category') }}" class="btn btn-info text-active float-right">
+            <a href="{{ route('admin.category', app()->getLocale()) }}" class="btn btn-info text-active float-right">
                 <i class="bx bx-plus"></i>
                 List</a>
         </span>
@@ -31,7 +31,7 @@
         <div class="col-xl-12">
             <div class="card mb-4">
                 <div class="card-body shadow">
-                    <form action="{{ route('admin.category.store') }}" method="post">
+                    <form action="{{ route('admin.category.store', app()->getLocale()) }}" method="post">
                         @csrf
                         <div class="mb-3">
                             <div class="row">

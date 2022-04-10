@@ -22,17 +22,17 @@ Route::group(['prefix' => '{language}'], function (){
         Route::get('/login', [AdminController::class, 'loginForm'])->name('login.form');
         Route::post('/login/owner', [AdminController::class, 'login'])->name('admin.login');
     
-        Route::middleware([Admin::class])->group(function(){
+        
              // Dashboard
-        Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+        Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard')->middleware('admin');
             // Logout
-        Route::get('/logout', [AdminController::class, 'logout'])->name('admin.logout');
+        Route::get('/logout', [AdminController::class, 'logout'])->name('admin.logout')->middleware('admin');
             // Category Routes
-        Route::get('/category', [CategoryController::class, 'index'])->name('admin.category');
-        Route::get('/category/create', [CategoryController::class, 'create'])->name('admin.create');
-        Route::post('/category/store', [CategoryController::class, 'store'])->name('admin.category.store');
+        Route::get('/category', [CategoryController::class, 'index'])->name('admin.category')->middleware('admin');
+        Route::get('/category/create', [CategoryController::class, 'create'])->name('admin.create')->middleware('admin');
+        Route::post('/category/store', [CategoryController::class, 'store'])->name('admin.category.store')->middleware('admin');
     
-        });
+        
     });
 
     // Auth::routes();

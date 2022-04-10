@@ -12,9 +12,31 @@ class CategoryController extends Controller
     public function index()
     {
         $data = [];
-        $data['allCategories'] = Category::all();
-        return view('admin.category.list')->with($data);
+
+        $itemsPerPage = itemsPerPage();
+
+        $categoryModel = new Category();
+        $data['categoryModel'] = $categoryModel;
+
+        $args = array(
+            'items_per_page' => $itemsPerPage,
+            'paginate'       => true
+        );
+
+        // Push Filter/Search Parameters.
+        $args = filterParams(
+            $args,
+            array(
+                'name'        => 'name',
+                'is_active'   => 'is_active',
+            )
+        );
+
+        $data['allCategories'] = $categoryModel->getCategories($args);
+
+        return view('admin.category.list', compact('itemsPerPage'))->with($data);
     }
+
     public function create()
     {
         return view('admin.category.create');

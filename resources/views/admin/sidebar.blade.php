@@ -22,9 +22,9 @@
 
     <!-- Category -->
     <li class="menu-item">
-        <a href="{{ route('admin.category') }}" class="menu-link">
+        <a href="{{ route('admin.category', app()->getLocale()) }}" class="menu-link">
             <i class="menu-icon tf-icons bx bx-window-open"></i>
-            <div data-i18n="Category">Category</div>
+            <div data-i18n="Category">{{ __('Category') }}</div>
         </a>
     </li>
 
