@@ -60,7 +60,6 @@ class Category extends Model
                 $categories = $categories->where('categories.is_active', 0);
             }
         }
-
         if (!empty($arguments['name'])) {
             $search_name = $arguments['name'];
             $categories   = $categories->where(

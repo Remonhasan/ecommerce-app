@@ -14,7 +14,7 @@
     ?>
 
     <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-6">
             <div class="form-group">
                 <label for="name" class="font-weight-bold">{{ __('Name') }}</label>
                 <input type="text" name="name" id="search" class="form-control" autocomplete="off" value="{{ $_filter_params['name'] }}">

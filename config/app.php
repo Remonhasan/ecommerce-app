@@ -251,4 +251,6 @@ return [
         100,
     ],
 
+    'admin_route_prefix' => '/admin',
+
 ];

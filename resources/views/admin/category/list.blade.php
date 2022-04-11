@@ -80,7 +80,7 @@
                                     </button>
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="row-action-button-1">
 
-                                        <a href="" class="dropdown-item">
+                                        <a href="{{ route('admin.category.edit', $category->id)}}" class="dropdown-item">
                                             <i class="icon-pencil7" aria-hidden="true"></i> {{ __('Edit') }}
                                         </a>
 
