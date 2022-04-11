@@ -1,4 +1,14 @@
 {
     "Name (In English)" : "নাম (ইংরেজীতে)",
-    "Laravel" : "লারাভেল"
+    "Laravel" : "লারাভেল",
+    "Category" : "ক্যাটেগরি",
+    "Categories" : "ক্যাটেগরিসমূহ",
+    "Add" : "যোগ করুন",
+    "SL" : "ক্রমিক নং",
+    "Name (In English)" : "নাম (ইংরেজীতে)",
+    "Name (In Bangla)" : "নাম (বাংলায়)",
+    "Is Active" : "সক্রিয় কিনা?",
+    "Created at" : "তৈরি হয়েছে",
+    "Action" : "অ্যাকশন",
+    "Sorry! No data found to display" : "দুঃখিত! কোন তথ্য পাওয়া যায়নি"
 }

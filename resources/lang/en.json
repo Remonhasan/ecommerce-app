@@ -1,4 +1,13 @@
 {
     "Name (In English)" : "Name (In English)",
-    "Laravel" : "Laravel"
+    "Laravel" : "Laravel",
+    "Category" : "Category",
+    "Categories" : "Categories",
+    "Add" : "Add",
+    "SL" : "SL",
+    "Name (In English)" : "Name (In English)",
+    "Name (In Bangla)" : "Name (In Bangla)",
+    "Is Active" : "Is Active",
+    "Action" : "Action",
+    "Sorry! No data found to display" : "Sorry! No data found to display"
 }

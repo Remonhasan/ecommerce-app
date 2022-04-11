@@ -19,7 +19,7 @@
 @section('admin')
 
     <h4 class="fw-bold py-3 mb-4">
-        <span class="text-active fw-light">Create New Category</span>
+        <span class="text-active fw-light">Edit Category</span>
         <span>
             <a href="{{ route('admin.category', app()->getLocale()) }}" class="btn btn-info text-active float-right">
                 <i class="bx bx-plus"></i>
@@ -31,19 +31,20 @@
         <div class="col-xl-12">
             <div class="card mb-4">
                 <div class="card-body shadow">
-                    <form action="{{ route('admin.category.store', app()->getLocale()) }}" method="post">
+                    <form action="{{ route('admin.category.update', $category->id, app()->getLocale()) }}" method="post">
                         @csrf
+                        @method('PUT')
                         <div class="mb-3">
                             <div class="row">
                                 <div class="col-md-4">
                                     <label for="name-en">Name (In English)</label>
-                                    <input type="text" name="name_en" class="form-control mb-1"
+                                    <input type="text" name="name_en" value="{{ $category->name_en }}" class="form-control mb-1"
                                         placeholder="Name in English" autocomplete="off">
                                     <div class="error-msg msg-hidden">Name (In English) is required.</div>
                                 </div>
                                 <div class="col-md-4">
                                     <label for="name-bn">Name (In Bangla)</label>
-                                    <input type="text" name="name_bn" class="form-control mb-1" placeholder="Name in Bangla"
+                                    <input type="text" name="name_bn" value="{{ $category->name_bn  }}"  class="form-control mb-1" placeholder="Name in Bangla"
                                         autocomplete="off">
                                     <div class="error-msg msg-hidden ml-1">Name (In Bangla) is required.</div>
                                 </div>
@@ -51,14 +52,14 @@
                                     <div class="form-group">
                                         <label for="category-status" class="font-weight-bold">{{ __('Status') }}</label>
                                         <select name="is_active" id="category-status" class="custom-select">
-                                            <option value="1">{{ __('Active') }}</option>
-                                            <option value="0">{{ __('Inactive') }}</option>
+                                            <option value="1" {{ 1 === $category->is_active ? 'selected="selected"' : '' }}>{{ __('Active') }}</option>
+                                            <option value="0" {{ 0 === $category->is_active ? 'selected="selected"' : '' }}>{{ __('Inactive') }}</option>
                                         </select>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" id="formSubmit" class="btn btn-primary float-right">Save</button>
+                        <button type="submit" id="formSubmit" class="btn btn-primary float-right">Update</button>
                     </form>
                 </div>
             </div>
